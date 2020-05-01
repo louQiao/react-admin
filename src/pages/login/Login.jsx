@@ -30,7 +30,7 @@ const login  = class Login extends Component{
         const {username,password} = values;
         let result = await reqLogin(username,password);
         console.log(result)
-        if(result.status == 0){
+        if(result.status === 0){
             message.success("登陆成功")
             storageUtils.saveUser(result.data)
             memoryUtils.user = result.data

@@ -9,6 +9,14 @@ export const reqLogin = (username,password) => ajax(baseURL+"/login",{username,p
 
 export const reqAdduser = (user) => ajax(baseURL+"/manage/user/add",user,"POST")
 
+//商品分类数据，所有分类，添加分类，修改分类
+
+export const reqCategorys = (parentId) => ajax(baseURL+"/manage/category/list",{parentId})
+
+export const reqAddCategory = (categoryName,parentId) => ajax(baseURL+"/manage/category/add",{categoryName,parentId},'POST')
+
+export const reqUpdateCategory = ({categoryId,categoryName}) => ajax(baseURL+"/manage/category/update",{categoryId,categoryName},'POST')
+
 //jsonp请求天气数据
 
 export const reqWeather = (city) => {

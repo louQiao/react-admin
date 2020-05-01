@@ -117,8 +117,8 @@ const { SubMenu } = Menu;
 
     render(){
         const path = this.props.location.pathname;
-        console.log(path,"aa")
-        var iconType = 'HomeOutlined';
+        //console.log(path)
+        
         return <div>
             <Link to="/" className="left-nav-header">
                 <img src={logo} alt="logo"/>
