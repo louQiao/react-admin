@@ -12,7 +12,7 @@ const { SubMenu } = Menu;
  class LeftNav extends Component{
     //方法一：使用map方式实现
     getMenuNodesByMap = (menuConfig) => {
-        console.log(menuConfig)
+        //console.log(menuConfig)
       return   menuConfig.map(item => {
             const iconType = item.icon;
             if(item.children){
@@ -62,7 +62,7 @@ const { SubMenu } = Menu;
             const iconType = item.icon;
             if(item.children){
                 item.children.find(childItem => {
-                    if(path === childItem.key){
+                    if(path.indexOf(childItem.key) === 0){
                         this.openNode = item.key
                     }
                 })
@@ -116,8 +116,12 @@ const { SubMenu } = Menu;
     }
 
     render(){
-        const path = this.props.location.pathname;
-        //console.log(path)
+        let path = this.props.location.pathname;
+        
+        if(path.indexOf("/product") === 0){
+            path = "/product"
+        }
+        
         
         return <div>
             <Link to="/" className="left-nav-header">
