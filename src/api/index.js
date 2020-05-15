@@ -32,6 +32,13 @@ export const reqDeleteImg = (name) => ajax(baseURL + "/manage/img/delete",{name}
 //添加或更新商品
 export const reqAddorUpdateProd = (product) => ajax(baseURL + "/manage/product/" + (product._id ? 'update' : 'add'),product,'POST')
 
+//获取角色列表
+export const reqRoles = () => ajax(baseURL + "/manage/role/list")
+//添加角色
+export const reqAddRoles = (roleName) => ajax(baseURL + "/manage/role/add",{roleName},'POST')
+//修改角色
+export const reqUpdateRole = (role) => ajax(baseURL + "manage/role/update",role,'POST')
+
 //jsonp请求天气数据
 
 export const reqWeather = (city) => {
